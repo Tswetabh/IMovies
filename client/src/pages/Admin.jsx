@@ -58,6 +58,53 @@ export default function Admin() {
         </div>
       </header>
 
+      <section className="admin-quick-actions" aria-label="Admin quick actions">
+        <button type="button" className="admin-action-button" onClick={() => setTab('movies')}>
+          <i className="bi bi-plus-circle" aria-hidden="true" />
+          <span>Add / manage movies</span>
+        </button>
+        <button type="button" className="admin-action-button" onClick={() => setTab('theatres')}>
+          <i className="bi bi-building-add" aria-hidden="true" />
+          <span>Manage theatres</span>
+        </button>
+        <button type="button" className="admin-action-button" onClick={() => setTab('showtimes')}>
+          <i className="bi bi-calendar-plus" aria-hidden="true" />
+          <span>Schedule a show</span>
+        </button>
+        <button type="button" className="admin-action-button" onClick={() => setTab('bookings')}>
+          <i className="bi bi-ticket-detailed" aria-hidden="true" />
+          <span>View all bookings</span>
+        </button>
+      </section>
+
+      <section className="admin-stat-grid" aria-label="Dashboard statistics">
+        <div className="admin-stat-card">
+          <span className="admin-stat-label">Total movies</span>
+          <strong>{data.movies.length}</strong>
+          <i className="bi bi-film" aria-hidden="true" />
+        </div>
+        <div className="admin-stat-card">
+          <span className="admin-stat-label">Active showtimes</span>
+          <strong>{data.showtimes.filter((showtime) => showtime.status === 'scheduled').length}</strong>
+          <i className="bi bi-calendar2-week" aria-hidden="true" />
+        </div>
+        <div className="admin-stat-card">
+          <span className="admin-stat-label">Theatres</span>
+          <strong>{data.theatres.length}</strong>
+          <i className="bi bi-building" aria-hidden="true" />
+        </div>
+        <div className="admin-stat-card admin-stat-revenue">
+          <span className="admin-stat-label">Confirmed revenue</span>
+          <strong>
+            ₹{data.bookings
+              .filter((booking) => booking.status === 'confirmed')
+              .reduce((total, booking) => total + Number(booking.totalAmount || 0), 0)
+              .toLocaleString('en-IN')}
+          </strong>
+          <i className="bi bi-cash-coin" aria-hidden="true" />
+        </div>
+      </section>
+
       <div className="tabs-row" role="tablist" aria-label="Admin sections">
         {TABS.map((item) => (
           <button

@@ -7,14 +7,14 @@ import { Showtime } from './models/Showtime.js';
 import { Booking } from './models/Booking.js';
 import { calculateTotal, createBookingReference } from './utils/seats.js';
 
-const POSTER = (seed) => `https://picsum.photos/seed/${seed}/600/900`;
+const POSTER = (fileName) => `/posters/${fileName}`;
 
 const MOVIES = [
   {
     title: 'Neon Horizon',
     description:
       'A courier pilot smuggles a stolen memory across a rain-soaked megacity, only to discover it holds the blueprint of the city itself.',
-    posterUrl: POSTER('neon-horizon'),
+    posterUrl: POSTER('dune_2.jpg'),
     trailerUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     genres: ['Sci-Fi', 'Thriller'],
     languages: ['English', 'Hindi'],
@@ -30,7 +30,7 @@ const MOVIES = [
     title: 'The Last Monsoon',
     description:
       'Three siblings return to their flooded family home to settle an inheritance and end up rebuilding a life they thought was over.',
-    posterUrl: POSTER('last-monsoon'),
+    posterUrl: POSTER('pride_of_bharat.jpg'),
     genres: ['Drama', 'Family'],
     languages: ['Hindi', 'Marathi'],
     durationMinutes: 142,
@@ -45,7 +45,7 @@ const MOVIES = [
     title: 'Midnight Circuit',
     description:
       'A late-night radio host starts receiving calls from a caller who can describe crimes before they happen.',
-    posterUrl: POSTER('midnight-circuit'),
+    posterUrl: POSTER('og.jpg'),
     genres: ['Thriller', 'Mystery'],
     languages: ['English'],
     durationMinutes: 116,
@@ -60,7 +60,7 @@ const MOVIES = [
     title: 'Paper Lanterns',
     description:
       'Two strangers keep meeting at the same festival every year, never quite finding the right moment to stay.',
-    posterUrl: POSTER('paper-lanterns'),
+    posterUrl: POSTER('avatar.jpg'),
     genres: ['Romance', 'Drama'],
     languages: ['Hindi', 'English'],
     durationMinutes: 124,
@@ -75,7 +75,7 @@ const MOVIES = [
     title: 'Iron Valley',
     description:
       'A retired stunt driver is pulled back for one last job: moving a witness across a desert in a car that should not exist.',
-    posterUrl: POSTER('iron-valley'),
+    posterUrl: POSTER('baaghi4.jpg'),
     genres: ['Action', 'Crime'],
     languages: ['English', 'Tamil'],
     durationMinutes: 134,
@@ -90,7 +90,7 @@ const MOVIES = [
     title: 'Laugh Track',
     description:
       'A failing sitcom writer discovers that every joke he cuts from the script starts coming true in his own life.',
-    posterUrl: POSTER('laugh-track'),
+    posterUrl: POSTER('pushpa_2.jpg'),
     genres: ['Comedy'],
     languages: ['English', 'Hindi'],
     durationMinutes: 108,
@@ -105,7 +105,7 @@ const MOVIES = [
     title: 'The Quiet Deep',
     description:
       'A salvage crew investigating a sunken research station finds the crew logs still recording.',
-    posterUrl: POSTER('quiet-deep'),
+    posterUrl: POSTER('toxic.jpg'),
     genres: ['Horror', 'Mystery'],
     languages: ['English'],
     durationMinutes: 101,
@@ -120,7 +120,7 @@ const MOVIES = [
     title: 'Skyward Bound',
     description:
       'A young mapmaker and a grumpy hot-air balloon captain race to chart a floating island before it drifts away forever.',
-    posterUrl: POSTER('skyward-bound'),
+    posterUrl: POSTER('ramayana.jpg'),
     genres: ['Animation', 'Adventure', 'Family'],
     languages: ['English', 'Hindi'],
     durationMinutes: 96,
